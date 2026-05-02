@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background-image: radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
+                    radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 40%);
+}
+
+#quiz-container {
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Custom animations for options */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.option-item {
+  animation: fadeInSlide 0.3s ease forwards;
+}
+
+/* Smooth transition for views */
+.hidden {
+  display: none;
+}
+
+button:active {
+  transform: scale(0.98);
+}
